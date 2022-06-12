@@ -1,23 +1,9 @@
 {
   "dependencies": {
-    "http-server": "^14.1.1",
-    "jquery": "^3.6.0"
+    "http-server": "^14.1.1"
   },
-  "name": "agridera",
-  "version": "1.0.0",
-  "description": "Practice, RPZ 19 1/9",
-  "main": "index.js",
-  "scripts": {
+  "scripts" :{
     "start": "http-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/Kwikli/shramkos-agridera.git"
-  },
-  "author": "Shramko Vladislav",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/Kwikli/shramkos-agridera/issues"
-  },
-  "homepage": "https://gitlab.com/Kwikli/shramkos-agridera#readme"
+  }
+
 }
