@@ -14,11 +14,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap" rel="stylesheet">
 
-<link rel="manifest" href="/manifest.json">
-
 	<title>Tomato all</title>
 </head>	
 <body>
+    <script src="css/bootstrap.bundle.min.js"></script>
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
@@ -120,7 +119,7 @@
                         <div id="app">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="card" v-if="products" v-for="p in products" ><a v-bind:href="p.link" class="tomato_link">
+                                <div class="card" v-if="products" v-for="p in products" ><a v-bind:href="'tomato_one.html#'+p.id" class="tomato_link">
                                     <img v-bind:src="p.image" class="tomato_id">
                                     <div class="container" style="padding-top: 8px;">
                                         <div class="text-center">
@@ -163,14 +162,17 @@
         </div>
     </footer>	
 
-    <section>
-        <script src="css/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/vue@3"></script>
-        <script src="js/main.js"></script>		
-    </section>		
+<section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</section>
+<section>
+<script src="css/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="js/main.js"></script>		
+</section>
 
 </body>
 </html>
