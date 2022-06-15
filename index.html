@@ -18,11 +18,46 @@
 	<script>
 		if ('serviceWorker' in navigator) {
            navigator.serviceWorker
-           .register('/sw.js')
+           .register('sw.js')
            .then(function() {
                console.log('Service worker registered!');
            });
        }
+	   
+	   function askPermissoin() {
+    return new Promise(function(resolve, reject) {
+      const permissionResult = Notification.requestPermission(function(result) {
+      resolve(result);
+      });
+
+      if (permissionResult) {
+        permissionResult.then(resolve, reject);
+      }
+  })
+  .then(function(permissionResult) {
+      if (permissionResult !== 'granted') {
+        throw new Error ('We weren\'t granted permission.');
+      }
+  });
+}
+
+if ('serviceWorker' in navigator)	{
+    navigator.serviceWorker
+    .register('/sw.js')
+    .then(function()	{
+        console.log('Service worker registered!');
+      
+    });
+  
+    navigator.serviceWorker.ready.then(registration => {
+      if ('PushManager' in window) {
+        document.querySelector('button.subscribe-for-push').addEventListener('click', () => {
+              alert("Ask permission");
+              askPermissoin()
+          });
+      }
+    });
+}
 	</script>
 </head>	
 <body>
@@ -31,7 +66,7 @@
 		<div class="container">
 			
 		<div class="col-6 pb-3"> <span class="align-middle">
-			<img src="images/Logo.png" style="padding-top: 18px; max-width: 150%;">
+			<img src="images/Logo.png" style="padding-top: 18px; max-width: 150%;">	
 		</span></div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -62,13 +97,16 @@
 					<div class="col-12">
 						<div class="text-center">
 							<div class="text_name"><b>
-							Agridera Seeds and Agriculture Ltd </b>
+							Agridera Seeds and Agriculture Ltd</b> 
 							</div>
 						</div>
 						<div class="button_read text-center">
-							<div class="read_more_margin">
+							<br class="read_more_margin">
 							<button type="button" class="btn btn-primary btn-dark btn-lg read_more_b">
 								READ MORE 
+								</button>
+							</br>
+								<button class="subscribe-for-push btn btn-primary btn-dark btn-lg read_more_b">SUBSCRIBE</button>
 								</div>
 							</button>
 						</div>
